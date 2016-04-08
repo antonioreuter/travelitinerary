@@ -1,0 +1,60 @@
+buildscript {
+    ext {
+        springBootVersion = '1.3.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        mavenLocal()
+        maven { url "http://repo.spring.io/libs-release" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+group 'com.reuter.travelitinerary'
+version '1.0-SNAPSHOT'
+description 'travel-itinerary'
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'travel-itinerary'
+    version = '1.0-SNAPSHOT'
+}
+
+
+springBoot {
+    mainClass = 'com.reuter.travelitinerary.TravelItinerary'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+    maven { url "http://repo.spring.io/libs-release" }
+}
+
+ext {
+    springBootVersion = '1.3.3.RELEASE'
+    springWeb = '4.2.5.RELEASE'
+}
+
+dependencies {
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter'
+    compile group: 'org.springframework', name: 'spring-web'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.5'
+}
