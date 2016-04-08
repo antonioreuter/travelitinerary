@@ -1,7 +1,7 @@
-# Travel Itinerary Tool
+# Travel Itinerary Builder
 
 An example of a command line application to generate an awesome itinerary. 
-In this tool we are consuming the itinerary service provided by GoEuro.
+For build your itinerary we are consuming the services from GoEuro to help us to give you the best tip.
 
 
 #### Technologies
